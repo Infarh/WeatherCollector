@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Data\WeatherCollector.DAL\WeatherCollector.DAL.csproj" />
+    <ProjectReference Include="..\WeatherCollector.Interfaces.Base\WeatherCollector.Interfaces.Base.csproj" />
   </ItemGroup>
 
 </Project>
