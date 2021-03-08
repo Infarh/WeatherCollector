@@ -4,7 +4,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using WeatherCollector.DAL.Context;
 using WeatherCollector.Infrastructure;
+using WeatherCollector.Workers;
 
 namespace WeatherCollector
 {
@@ -12,7 +14,9 @@ namespace WeatherCollector
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDatabase(Configuration);
+            services.AddDatabase(Configuration).AddTransient<WeatherDbInitializer>();
+
+            services.AddHostedService<WeatherDataAcquisition>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

@@ -14,6 +14,7 @@ namespace WeatherCollector
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(host => host
                    .UseStartup<Startup>()
+                   
                 )
             ;
     }
