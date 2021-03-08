@@ -11,17 +11,20 @@ namespace WeatherCollector.Infrastructure
         public static IServiceCollection AddDatabase(this IServiceCollection services, IConfiguration Configuration) =>
             Configuration["Database"] switch
             {
-                "Sqlite" => services.AddDbContext<WeatherDB>(opt =>
-                        opt.UseSqlite(Configuration.GetConnectionString("Sqlite"),
-                            o => o.MigrationsAssembly("WeatherCollector.DAL.Migrations.Sqlite"))),
+                "Sqlite" => services.AddDbContext<WeatherDB>(
+                        opt => opt.UseSqlite(Configuration.GetConnectionString("Sqlite"), 
+                            o => o.MigrationsAssembly("WeatherCollector.DAL.Migrations.Sqlite")))
+                   .AddEntityFrameworkProxies(),
 
-                "SQLServer" => services.AddDbContext<WeatherDB>(opt =>
-                        opt.UseSqlServer(Configuration.GetConnectionString("SqlServer"),
-                            o => o.MigrationsAssembly("WeatherCollector.DAL.Migrations.SqlServer"))),
+                "SQLServer" => services.AddDbContext<WeatherDB>(
+                        opt => opt.UseSqlServer(Configuration.GetConnectionString("SqlServer"),
+                            o => o.MigrationsAssembly("WeatherCollector.DAL.Migrations.SqlServer")))
+                   .AddEntityFrameworkProxies(),
 
-                "SqlServer" => services.AddDbContext<WeatherDB>(opt =>
-                    opt.UseSqlServer(Configuration.GetConnectionString("SqlServer"),
-                        o => o.MigrationsAssembly("WeatherCollector.DAL.Migrations.SqlServer"))),
+                "SqlServer" => services.AddDbContext<WeatherDB>(
+                        opt => opt.UseSqlServer(Configuration.GetConnectionString("SqlServer"), 
+                            o => o.MigrationsAssembly("WeatherCollector.DAL.Migrations.SqlServer")))
+                   .AddEntityFrameworkProxies(),
 
                 "" => throw new InvalidOperationException("Тип БД не определён"),
                 null => throw new InvalidOperationException("Тип БД не определён"),

@@ -2,7 +2,6 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WeatherCollector.DAL.Context;
 
 namespace WeatherCollector.DAL.Migrations.Sqlite.Migrations
