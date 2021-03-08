@@ -12,4 +12,9 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Data\WeatherCollector.DAL\WeatherCollector.DAL.csproj" />
+    <ProjectReference Include="..\Services\WeatherCollector.Services\WeatherCollector.Services.csproj" />
+  </ItemGroup>
+
 </Project>
