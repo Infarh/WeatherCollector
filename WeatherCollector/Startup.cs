@@ -1,9 +1,13 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using System;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using WeatherCollector.DAL.Context;
+using WeatherCollector.Infrastructure;
 
 namespace WeatherCollector
 {
@@ -11,6 +15,7 @@ namespace WeatherCollector
     {
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDatabase(Configuration);
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
