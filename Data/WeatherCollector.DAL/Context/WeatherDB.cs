@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WeatherCollector.DAL.Entities;
+using WeatherCollector.DAL.Entities.Base;
 
 namespace WeatherCollector.DAL.Context
 {
@@ -12,5 +13,13 @@ namespace WeatherCollector.DAL.Context
         public DbSet<Pressure> Pressures { get; set; }
 
         public WeatherDB(DbContextOptions<WeatherDB> options) : base(options) { }
+
+        protected override void OnModelCreating(ModelBuilder model)
+        {
+            base.OnModelCreating(model);
+
+            model.ApplyConfigurationsFromAssembly(typeof(Entity).Assembly);
+
+        }
     }
 }
