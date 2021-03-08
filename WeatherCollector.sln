@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTest", "Tests\Consol
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherCollector.Services.Tests", "Tests\WeatherCollector.Services.Tests\WeatherCollector.Services.Tests.csproj", "{8ED22EEE-E8D7-4F85-8C2C-AFB9B354D52A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherCollector.Interfaces.Base", "Services\WeatherCollector.Interfaces.Base\WeatherCollector.Interfaces.Base.csproj", "{16F4EB6A-BE82-4416-9A6C-92870D48A2B9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +81,10 @@ Global
 		{8ED22EEE-E8D7-4F85-8C2C-AFB9B354D52A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8ED22EEE-E8D7-4F85-8C2C-AFB9B354D52A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8ED22EEE-E8D7-4F85-8C2C-AFB9B354D52A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16F4EB6A-BE82-4416-9A6C-92870D48A2B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16F4EB6A-BE82-4416-9A6C-92870D48A2B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16F4EB6A-BE82-4416-9A6C-92870D48A2B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16F4EB6A-BE82-4416-9A6C-92870D48A2B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -94,6 +100,7 @@ Global
 		{44139A50-7210-4226-AB0D-6FE6A3D28D07} = {B435D5A8-98F4-48E6-AED7-81CF21AECB7E}
 		{E01C871F-8824-482B-B6E4-94887DDB247F} = {87855569-2660-4B16-8007-25F3A293DEE3}
 		{8ED22EEE-E8D7-4F85-8C2C-AFB9B354D52A} = {87855569-2660-4B16-8007-25F3A293DEE3}
+		{16F4EB6A-BE82-4416-9A6C-92870D48A2B9} = {5B43CA50-C8B6-4D9A-A580-9A31C2B536C8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D6704503-5827-4E4E-BD4B-BA4FF747D026}
