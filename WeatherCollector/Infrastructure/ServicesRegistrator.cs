@@ -13,18 +13,18 @@ namespace WeatherCollector.Infrastructure
             {
                 "Sqlite" => services.AddDbContext<WeatherDB>(
                         opt => opt.UseSqlite(Configuration.GetConnectionString("Sqlite"), 
-                            o => o.MigrationsAssembly("WeatherCollector.DAL.Migrations.Sqlite")))
-                   .AddEntityFrameworkProxies(),
+                            o => o.MigrationsAssembly("WeatherCollector.DAL.Migrations.Sqlite"))
+                           .UseLazyLoadingProxies()),
 
                 "SQLServer" => services.AddDbContext<WeatherDB>(
                         opt => opt.UseSqlServer(Configuration.GetConnectionString("SqlServer"),
-                            o => o.MigrationsAssembly("WeatherCollector.DAL.Migrations.SqlServer")))
-                   .AddEntityFrameworkProxies(),
+                            o => o.MigrationsAssembly("WeatherCollector.DAL.Migrations.SqlServer"))
+                           .UseLazyLoadingProxies()),
 
                 "SqlServer" => services.AddDbContext<WeatherDB>(
                         opt => opt.UseSqlServer(Configuration.GetConnectionString("SqlServer"), 
-                            o => o.MigrationsAssembly("WeatherCollector.DAL.Migrations.SqlServer")))
-                   .AddEntityFrameworkProxies(),
+                            o => o.MigrationsAssembly("WeatherCollector.DAL.Migrations.SqlServer"))
+                           .UseLazyLoadingProxies()),
 
                 "" => throw new InvalidOperationException("Тип БД не определён"),
                 null => throw new InvalidOperationException("Тип БД не определён"),
