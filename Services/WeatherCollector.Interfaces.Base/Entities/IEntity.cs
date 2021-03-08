@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace WeatherCollector.Interfaces.Base.Entities
+﻿namespace WeatherCollector.Interfaces.Base.Entities
 {
     public interface IEntity
     {
